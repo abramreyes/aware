@@ -1,0 +1,11 @@
+{
+  "name": "aware",
+  "version": "0.1.0",
+  "description": "Portable context-first workflow skill for AI coding agents.",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node tests/skill.test.js"
+  },
+  "license": "MIT"
+}
