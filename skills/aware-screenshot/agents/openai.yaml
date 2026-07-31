@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aware Screenshot"
+  short_description: "Capture project route screenshots"
+  default_prompt: "Use $aware-screenshot to capture project-relative screenshots for local web app visual review."

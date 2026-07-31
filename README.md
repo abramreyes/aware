@@ -2,9 +2,11 @@
 
 Minimal sufficient context before code.
 
-Aware is a portable workflow for AI coding agents. It helps an agent understand the relevant parts of a project before investigating, planning, editing, or reviewing code, while avoiding unnecessary token use.
+Aware is a small set of portable workflow skills for AI coding agents.
 
-The main artifact is [`skills/aware/SKILL.md`](skills/aware/SKILL.md). It can be copied into an agent-compatible skills directory and activated with natural language.
+The main skill is [`skills/aware/SKILL.md`](skills/aware/SKILL.md). It helps an agent understand the relevant parts of a project before investigating, planning, editing, or reviewing code, while avoiding unnecessary token use.
+
+The companion [`skills/aware-screenshot/SKILL.md`](skills/aware-screenshot/SKILL.md) skill captures project-relative local route screenshots for visual review.
 
 ## Problem
 
@@ -35,11 +37,16 @@ Without Aware, an agent may guess likely implementation details, search random f
 
 With Aware, an agent should work from inspected evidence, stop gathering context once the next safe move is clear, keep output compact, label uncertainty, and report what was actually verified.
 
+## Skills
+
+- `aware`: minimal sufficient context workflow before code changes.
+- `aware-screenshot`: project-relative screenshot capture under `docs/screenshots/{date-time}/`.
+
 ## Install
 
 Aware v0.1 is manual-install only.
 
-Copy the `skills/aware` directory into a skills location supported by your agent. For agents that support repository-local skills, keep this repository available and point the agent at `skills/aware/SKILL.md`.
+Copy the desired directory from `skills/` into a skills location supported by your agent. For agents that support repository-local skills, keep this repository available and point the agent at the relevant `SKILL.md`.
 
 This release does not include an installer, CLI, slash commands, registry publishing, MCP integration, or generated agent-specific mirrors.
 
@@ -55,6 +62,7 @@ create an implementation plan
 review this change
 trace this workflow
 understand this project before editing
+use aware-screenshot to capture route screenshots
 ```
 
 Aware is most useful when the agent is working in an unfamiliar codebase, investigating a bug, implementing a feature, reviewing a change, or preparing a grounded plan.
